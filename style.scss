@@ -1,0 +1,365 @@
+// @import "./mixins";
+// @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap");
+
+// :root {
+//   --font-size-small: 1.4rem;
+//   --font-size-regular: 1.6rem;
+//   --font-size-large: 1.8rem;
+//   --font-size-xLarge: 4.2rem;
+//   --font-weight-light: 300;
+//   --font-weight-regular: 400;
+//   --font-weight-bold: 700;
+//   --default-padding: 1.6rem;
+//   --font-family-ar: "Almarai", sans-serif;
+//   --timing-animation: 0.2s;
+//   --color-black: #3e3e3e;
+//   --color-red: #ff2d2d;
+//   --color-blue: #064267;
+//   --color-white: white;
+//   --color-gray: #525252;
+//   --color-light-gray: #f1f3f5;
+//   --color-text: var(--color-black);
+//   --color-bg: var(--color-light-gray);
+//   --color-input: var(--color-white);
+//   --color-link: var(--color-blue);
+//   --color-task-hover: #ececec;
+//   --color-bg-dark-theme: #222222;
+//   --color-input-dark-theme: #333333;
+//   --color-text-dark-theme: var(--color-light-gray);
+// }
+
+
+// /* CSS Reset */
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   border-radius: 0;
+// }
+
+
+// html {
+//   font-size: 62%;
+// }
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+// }
+
+// body {
+//   font-family: var(--font-family);
+//   background-color: var(--color-bg);
+//   color: var(--color-text);
+//   line-height: 1.6;
+//   transition: background-color 0.3s ease, color 0.3s ease;
+// }
+
+// body.dark {
+//   --color-bg: #111;
+//   --color-text: #f8f9fa;
+//   --color-blue: #1e90ff;
+//   --color-blue-light: #3aaaf7;
+//   --color-gray: #999;
+// }
+
+// .App {
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   font-size: var(--font-size-regular);
+//   background: var(--color-bg);
+//   font-family: "Almarai", sans-serif;
+//    transition: background var(--timing-animation);
+// color: var(--color-text);
+// }
+// .App--isDark {
+//     --color-bg: var(--color-bg-dark-theme);
+//     --color-input: var(--color-input-dark-theme);
+//     --color-text: var(--color-text-dark-theme);
+//     --color-task-hover: var(--color-input-dark-theme);
+//     --color-link: #3cb6ff;
+//     --color-gray: #adadad;
+//   }
+//  .App__wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 0 auto;
+//     max-width: 70rem;
+//     width: 100%;
+//     flex: 1;
+//     padding: var(--default-padding);
+//   }
+// .header {
+//   display: flex;
+//   justify-content: space-between;
+ 
+//   padding: var(--default-padding);
+// }
+
+// .DarkThemeToggle {
+//   background: var(--color-blue);
+//   border: none;
+//   color: var(--color-white);
+//   padding: 0.8rem 1.5rem;
+//   font-size: var(--font-size-regular);
+//   border-radius: 8px;
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   gap: 0.5rem;
+//   transition: background-color 0.3s ease;
+// }
+
+// .DarkThemeToggle:hover {
+//   background-color:#3cb6ff;
+// }
+// .DarkThemeToggle__deactivate {
+//   display: inline-block;
+
+// }.DarkThemeToggle__activate {
+//   display: none;
+// }
+
+// .DarkThemeToggle__activate,
+// .DarkThemeToggle__deactivate {
+//   font-weight: bold;
+//   margin-left: calc(var(--default-padding) / 4);
+//   font-size: var(--font-size-small);
+// }
+
+// .socials {
+//   display: flex;
+//   gap: calc(var(--default-padding) / 2);
+// }
+
+// .socials__img {
+//   width: 28px;
+//   height: 28px;
+//   transition: transform 0.3s;
+// }
+
+// body.dark .socials__img {
+//   filter: invert(1);
+// }
+
+// .socials__img:hover {
+//   transform: scale(1.1);
+// }
+
+// .app__wrapper {
+//   width: 100%;
+//   max-width: 700px;
+//   margin: 2rem auto 0;
+// }
+
+// .TaskSearchBar {
+//   text-align: center;
+//   margin-bottom: 2rem;
+// }
+
+// .TaskSearchBar__label {
+//   font-size: var(--font-size-xLarge);
+//   font-weight: var(--font-weight-light);
+//   margin-top: calc(var(--default-padding) * 2);
+//   margin-bottom: calc(var(--default-padding) * 2);
+//   text-align: center;
+// }
+
+// .TaskSearchBar__searchContent {
+//   display: flex;
+//     border-radius: 0.3rem;
+//   gap: 1.5rem;
+//   box-shadow: 0 0.6rem 0.8rem rgba(85, 102, 119, 0.03), 0 0.1rem 0.1rem rgba(85, 102, 119, 0.4);
+//   height: 6.4rem;
+//   overflow: hidden;
+// }
+
+// .TaskSearchBar__input {
+//       flex: 1 1 auto;
+
+//   font-size: var(--font-size-large);
+//  padding: var(--default-padding);
+//       border: 0;
+// transition: background-color var(--timing-animation);
+//   font-family: var(--font-family);
+//   background-color: var(--color-white);
+//   color: var(--color-text);
+// }
+
+// .TaskSearchBar__input::placeholder {
+//       color: var(--color-gray);
+//     opacity: 1;
+// }
+
+// .TaskSearchBar__button {
+//   background-color: var(--color-blue);
+//   color: white;
+//   border: none;
+//   font-size: var(--font-size-large);
+//       padding: 0 calc(var(--default-padding) * 1.5);
+//     font-weight: var(--font-weight-regular);
+//     font-family: var(--font-family-ar);
+
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
+
+// .TaskSearchBar__button:hover {
+//   background-color: #099df8;
+// }
+
+//       .show {
+//         display: inline-block;
+//       }
+//       .hide {
+//         display: none;
+//       }
+// .TaskList {
+//   margin-top: 2rem;
+// }
+
+// .TaskList__link {
+//   background: none;
+//   border: none;
+//   color: var(--color-blue-light);
+//   cursor: pointer;
+//   font-size: var(--font-size-regular);
+//   margin-bottom: 1rem;
+//   font-weight: bold;
+// }
+
+// .TaskList__list {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1rem;
+//   list-style: none;
+//   margin-top: calc(var(--default-padding) * 2);
+//   flex: 1;
+// }
+
+// .TaskList__taskContent {
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   padding: 0 var(--default-padding);
+//   height: 5.4rem;
+// }
+
+// .TaskList__taskContent:hover {
+//   background-color: var(--color-task-hover);
+// }
+
+// .TaskList__taskContent--isActive {
+//   text-decoration: line-through;
+//   color: var(--color-gray);
+// }
+//       .TaskList__deleteIcon {
+//         opacity: 1;
+//         visibility: visible;
+//       }
+
+// .TaskList--isActive {
+//       text-decoration: line-through;
+//       color: var(--color-gray);
+
+//       .TaskList__list--hideCompleted & {
+//         display: none;
+//       }
+
+//       .TaskList__checkbox {
+//         background-color: var(--color-blue);
+//       }
+
+//       .TaskList__checkboxImage {
+//         opacity: 1;
+//         visibility: visible;
+//       }
+//     }
+
+
+// .TaskList__valueContent {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   flex: 1;
+//   font-size: var(--font-size-large);
+// }
+
+// .TaskList__value {
+//   flex: 1;
+//   cursor: pointer;
+//   height: 100%;
+//   padding: var(--default-padding);
+//     transition: all var(--timing-animation);
+//   padding-right: calc(var(--default-padding) / 2);
+// }
+
+// .TaskList__valueInput {
+//     padding: var(--default-padding);
+//     padding-right: calc(var(--default-padding) / 2);
+//     font-family: var(--font-family-ar);
+//     font-size: var(--font-size-large);
+//     border: none;
+//     width: 100%;
+//     background-color: var(--color-white);
+//     height: 100%;
+// }
+
+// .TaskList__checkbox {
+//     width: 2.2rem;
+//     height: 2.2rem;
+//     background-color: white;
+//     box-shadow: 0 0 0.3rem rgba(black, 0.1);
+//     border-radius: 0.2rem;
+//     padding: 0.2rem;
+//     margin-left: calc(var(--default-padding) / 2);
+//     cursor: pointer;
+//     transition: all var(--timing-animation);
+// }
+
+// .TaskList__checkboxImage {
+//   opacity: 0;
+//   visibility: hidden;
+//   user-select: none;
+// }
+
+// .TaskList__deleteIcon {
+//     position: absolute;
+//     width: 2.8rem;
+//     left: 0;
+//     opacity: 0;
+//     visibility: hidden;
+//     transition: all var(--timing-animation);
+//     cursor: pointer;
+// }
+
+// .TaskList__taskContent:hover .TaskList__deleteIcon {
+//   opacity: 1;
+//   visibility: visible;
+// }
+
+// .EmptyList {
+//   text-align: center;
+//   color: var(--color-gray);
+//   font-weight: var(--font-weight-regular);
+//   font-size: var(--font-size-large);
+//   margin: var(--default-padding) auto 0;
+// }
+
+// .EmptyList__img {
+//   height: 30rem;
+//   filter: grayscale(1);
+//   opacity: 0.5;
+// }
+
+// @media (max-width: 600px) {
+//   .TaskSearchBar__searchContent {
+//     flex-direction: column;
+//     height: auto;
+//   }
+
+//   .TaskSearchBar__button {
+//     width: 100%;
+//   }
+// }

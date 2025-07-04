@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Todo app built with React.js" />
+    <link rel="icon" href="./assets/favicon.ico" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="App">
+      <header class="header">
+        <div class="header__top">
+
+          <div class="socials">
+            <a href="#"><img class="socials__img" src="assets/icon-facebook.svg" alt="facebook" /></a>
+            <a href="#"><img class="socials__img" src="assets/icon-github.svg" alt="github" /></a>
+            <a href="#"><img class="socials__img" src="assets/icon-youtube.svg" alt="youtube" /></a>
+            <a href="#"><img class="socials__img" src="assets/icon-twitter.svg" alt="twitter" /></a>
+          </div>
+
+        <button class="DarkThemeToggle">الوضع الليلي
+          <span class="DarkThemeToggle__activate">تفعيل</span>
+          <span class="DarkThemeToggle__deactivate">إيقاف</span>
+        </button>
+       </div>
+      </header> 
+        <div class="app__wrapper">
+          <div class="TaskSearchBar">
+            <label class="TaskSearchBar__label" for="search-input">قائمة المهام</label>
+          </div>
+
+          <form class="TaskSearchBar__searchContent">
+            <input class="TaskSearchBar__input" id="search-input" placeholder="قم بإضافة المهمة..." type="text" required />
+            <button class="TaskSearchBar__button" type="submit">إضافة</button>
+          </form>
+          
+
+          <div class="TaskList">
+            <button class="TaskList__link">
+              <span class="show">اظهار</span>
+              <span class="hide">اخفاء</span>
+              المهام المكتملة
+            </button>
+            <ul class="TaskList__list"></ul>
+          </div>
+        </div>
+      
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="./scripts/eventListeners.js"></script>
+    <script type="module" src="scripts\elements.js"></script>
+  </body>
+</html>
